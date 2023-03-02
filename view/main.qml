@@ -1,5 +1,6 @@
 import QtQuick
 import QtQuick.Controls 2.15
+import QtQuick.Controls.Material 2.15
 import QtQuick.Layouts 1.15
 import QtQuick.Window 2.2
 
@@ -8,9 +9,13 @@ ApplicationWindow {
     visible: true
     visibility: "Maximized"
     property bool _isLogin: false
+    Material.theme: Material.Dark
+    Material.accent: Material.Teal
+    Material.primary: "#F6F5F4"
     StackView{
         id: pageStack
-        anchors.fill: parent
+        width: parent.width
+        height: parent.height
         signal login()
         signal loginSuccess()
         onLogin: function(){
@@ -19,6 +24,7 @@ ApplicationWindow {
         }
         onLoginSuccess: function(){
             const i = pageStack.children.length - 1
+            _isLogin = true
             pageStack.pop()
         }
     }

@@ -6,7 +6,7 @@
 int main(int argc, char *argv[])
 {
     QGuiApplication app(argc, argv);
-    app.setWindowIcon(QIcon(":/QFace/assets/icon/logo.ico"));
+    app.setWindowIcon(QIcon("qrc:/QFace/assets/icon/logo.ico"));
     QQuickStyle::setStyle("Material");
     QQmlApplicationEngine engine;
     const QUrl url("qrc:/QFace/view/main.qml");
@@ -16,6 +16,7 @@ int main(int argc, char *argv[])
             QCoreApplication::exit(-1);
     }, Qt::QueuedConnection);
 
+    engine.setOfflineStoragePath("./");
     engine.load(url);
     return app.exec();
 }

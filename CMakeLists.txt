@@ -19,9 +19,10 @@ set(qml_files
 )
 
 set(icon_files
-    assets/icon/reco.png
-    assets/icon/record.png
-    assets/icon/user.png
+    assets/icon/feedback.png
+    assets/icon/clock.png
+    assets/icon/worker.png
+    assets/icon/logo.ico
 )
 
 qt_add_qml_module(appQFace
